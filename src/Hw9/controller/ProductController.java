@@ -77,13 +77,15 @@ public class ProductController {
                 }
                 case 6: {
                     int selection = 0;
-                    while (!isQuit) {
+                    boolean isBack = false;
+
+                    while (!isBack) {
                         showPriceMenu();
 
                         System.out.print("Nhập lựa chọn : ");
-                        option = sc.nextInt();
+                        selection = sc.nextInt();
 
-                        switch (option) {
+                        switch (selection) {
                             case 1: {
                                 for (int i = 0; i < ProductDatabase.products.size(); i++) {
                                     if (ProductDatabase.products.get(i).getPrice() <= 50.00){
@@ -109,7 +111,7 @@ public class ProductController {
                                 break;
                             }
                             case 4: {
-
+                                isBack = true;
                                 break;
                             }
                             default: {
